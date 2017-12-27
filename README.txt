@@ -11,7 +11,7 @@ Steps:
 1. Download https://github.com/mozilla/DeepSpeech
 
 2. Edit data/self/recording_scripts.txt and run recording_deepspeech.py to collect your data
-    - or you can download open source "LibriVox" from http://www.openslr.org/12/ and run flac2wav.py 
+   (or you can download open source "LibriVox" from http://www.openslr.org/12/ and run flac2wav.py )
     
 3. Edit and run catalog.py to create a csv file for training
 
