@@ -1,0 +1,12 @@
+downlaod and extract LibirVox folders here:
+http://www.openslr.org/12/
+
+dev-clean/  ->  dev-clean.tar.gz [337M]   (development set, "clean" speech ) 
+dev-other/  ->  dev-other.tar.gz [314M]   (development set, "other", more challenging, speech ) 
+
+test-clean/  ->  test-clean.tar.gz [346M]   (test set, "clean" speech ) 
+test-other/  ->  test-other.tar.gz [328M]   (test set, "other" speech ) 
+
+train-clean-100/  ->  train-clean-100.tar.gz [6.3G]   (training set of 100 hours "clean" speech ) 
+train-clean-360/  ->  train-clean-360.tar.gz [23G]    (training set of 360 hours "clean" speech ) 
+train-other-500/  ->  train-other-500.tar.gz [30G]    (training set of 500 hours "other" speech ) 
