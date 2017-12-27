@@ -1,5 +1,3 @@
-"""run .py in data/librivox/"""
-
 import os
 from datetime import datetime
 
@@ -17,10 +15,5 @@ def flac2wav(folder):
     print("folder: {}, data: {}\nprocessing time: {}".format(folder, count_files, datetime.now()-start_point))
 
 
-#if __name__ == "__main__":
-##    flac2wav("dev-clean/")
-##    flac2wav("train-clean-100/")
-##    flac2wav("train-clean-360/")
-##    flac2wav("train-other-500/")
-#    flac2wav("test-clean")
-
+if __name__ == "__main__":
+    flac2wav("data/LibriVox/")
