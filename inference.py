@@ -5,10 +5,8 @@ import numpy as np
 from python_speech_features import mfcc
 from datetime import datetime
 
-#ckpt_folder = './server_ckpt/2017-11-30-1204/'  # hidden size: 256
-#ckpt_folder = './ckpt/2017-12-06-0908/'  # hidden size: 128
-ckpt_folder = './ckpt/2017-12-12-1513/'
-meta = "model.ckpt-17200.meta"
+ckpt_folder = ''
+meta = ".meta"
 
 n_input = 26
 n_context = 5
@@ -177,7 +175,6 @@ def create_inference_graph(batch_size=None):
     decoder = tf.nn.ctc_beam_search_decoder
 
     decoded, _ = decoder(logits, seq_length, merge_repeated=True, beam_width=100)
-#    decoded = decode_with_lm(logits, seq_length, merge_repeated=False, beam_width=1024)
     y = tf.sparse_to_dense(tf.to_int32(decoded[0].indices), tf.to_int32(decoded[0].dense_shape), tf.to_int32(decoded[0].values), name='output_node')
 
     return (
@@ -215,12 +212,9 @@ if __name__ == '__main__':
         inputs, outputs = create_inference_graph(batch_size=1)
 
         # Create a saver using variables from the above newly created graph
-#        saver = tf.train.Saver(tf.global_variables())
         saver = tf.train.import_meta_graph(ckpt_folder + meta, clear_devices=True)
 
         # Restore variables from training checkpoint
-        # TODO: This restores the most recent checkpoint, but if we use validation to counterract
-        #       over-fitting, we may want to restore an earlier checkpoint.
         checkpoint = tf.train.get_checkpoint_state(ckpt_folder)
         checkpoint_path = checkpoint.model_checkpoint_path
         saver.restore(session, checkpoint_path)        
@@ -229,7 +223,6 @@ if __name__ == '__main__':
         
         test_num = int(input('Please enter test number: '))
         for i in range(test_num):
-#            os.system('arecord -D plughw:1,0 -d 5 -r 16000 -f S16_LE ./test.wav')
             os.system('arecord -d 5 -r 16000 -f S16_LE ./test.wav')
             start = datetime.now()
             do_single_file_inference('./test.wav')
