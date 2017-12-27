@@ -1,8 +1,5 @@
 # DeepSpeech_simple
 
-使用Mozilla的DeepDpeech專案訓練簡易指令辨識, 資料量～500筆
-https://github.com/mozilla/DeepSpeech
-
 Clone from mozilla's deepspeech project: https://github.com/mozilla/DeepSpeech
 You could train your own "simple commands recognition" with ~500 .wav files.
 
