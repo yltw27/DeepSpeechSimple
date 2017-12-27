@@ -11,7 +11,7 @@ Steps:
    (or you can download open source "LibriVox" from http://www.openslr.org/12/ 
     and run flac2wav.py )
     
-3. Edit and run catalog.py to create a csv file for training
+3. Edit and run catalog_self.py (or catalog.py for LibriVox) to create a csv file for training
 
 4. Edit and run DeepSpeecg.py with following settings:
     train_files/ dev_file/ test_files: path to the csv file you create with catalog.py
