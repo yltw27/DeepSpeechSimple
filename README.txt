@@ -11,7 +11,8 @@ Steps:
 1. Download https://github.com/mozilla/DeepSpeech
 
 2. Edit data/self/recording_scripts.txt and run recording_deepspeech.py to collect your data
-   (or you can download open source "LibriVox" from http://www.openslr.org/12/ and run flac2wav.py )
+   (or you can download open source "LibriVox" from http://www.openslr.org/12/ 
+    and run flac2wav.py )
     
 3. Edit and run catalog.py to create a csv file for training
 
@@ -21,7 +22,8 @@ Steps:
     max_to_keep: 1
     n_hidden: 128 (or you can use 256, 512... larger hidden size will cause longer inference time)
     
-    *you can also insert this block to line 10 and use " 'ckpt/'+ckpt_folder " as the checkpoint_dir:
+    *you can also insert this block to line 10 
+     and use " 'ckpt/'+ckpt_folder " as the checkpoint_dir:
 
     start = datatime.datetime.now()
     ckpt_folder = start.strftime("%Y-%m-%d-%H%M")
