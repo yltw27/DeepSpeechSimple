@@ -22,7 +22,7 @@ Steps:
     n_hidden: 128 (or you can use 256, 512... larger hidden size will cause longer inference time)
     
     *you can also insert this block to line 10 and use " 'ckpt/'+ckpt_folder " as the checkpoint_dir:
-    # make checkpoint folder
+
     start = datatime.datetime.now()
     ckpt_folder = start.strftime("%Y-%m-%d-%H%M")
     try:
