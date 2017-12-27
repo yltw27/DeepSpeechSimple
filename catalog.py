@@ -1,8 +1,3 @@
-"""
-run .py from DeepSpeech/
-python3 data/LibriVox/catalog.py
-"""
-
 import os
 import csv
 from datetime import datetime
@@ -49,10 +44,11 @@ def create_catalog(folder_list, csv_filename):
     print('csv file created: {}\ntime: {}'.format(csv_filename, datetime.now()-start_time))
 
 
-create_catalog(folder_list=["data/LibriVox/dev-clean/"], csv_filename="data/LibriVox/dev-clean.csv")
-create_catalog(folder_list=["data/LibriVox/test-clean/"], csv_filename="data/LibriVox/test-clean.csv")
-create_catalog(folder_list=["data/LibriVox/train-clean-100/",
-                            "data/LibriVox/train-clean-360/",
-                            "data/LibriVox/train-other-500/"], csv_filename="data/LibriVox/train-all.csv")
+if __name__ == "__main__":
+    create_catalog(folder_list=["data/LibriVox/dev-clean/"], csv_filename="data/LibriVox/dev-clean.csv")
+    create_catalog(folder_list=["data/LibriVox/test-clean/"], csv_filename="data/LibriVox/test-clean.csv")
+    create_catalog(folder_list=["data/LibriVox/train-clean-100/",
+                                "data/LibriVox/train-clean-360/",
+                                "data/LibriVox/train-other-500/"], csv_filename="data/LibriVox/train-all.csv")
 
 
